@@ -7,4 +7,4 @@ if __name__ == "__main__":
     # Use the PORT environment variable provided by Render
     #port = int(os.environ.get("PORT", 8080))
     # Bind to 0.0.0.0 so the port is reachable
-    app.run(port=5000)
+    app.run()
