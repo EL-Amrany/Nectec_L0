@@ -1,10 +1,16 @@
-from app import create_app
-import os
+# run.py
+from flask import Flask
+# if you keep routes in routes.py:
+# from routes import bp as routes_bp
 
-app = create_app()
+app = Flask(__name__)
+# app.register_blueprint(routes_bp)
+
+@app.route("/")
+def home():
+    return "OK from Flask on Vercel"
 
 if __name__ == "__main__":
-    # Use the PORT environment variable provided by Render
-    #port = int(os.environ.get("PORT", 8080))
-    # Bind to 0.0.0.0 so the port is reachable
+    # This should NOT execute on Vercel import
     app.run()
+
